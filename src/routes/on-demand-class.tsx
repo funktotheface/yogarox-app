@@ -1,0 +1,8 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { AppShell, AuthenticatedScreen, DeveloperNote, IntegrationPlaceholder } from "@/components/app/app-shell";
+export const Route = createFileRoute("/on-demand-class")({ head: () => ({ meta: [
+  { title: "On-demand class details — YogaRox" }, { name: "description", content: "YogaRox on-demand class detail frontend." },
+  { property: "og:title", content: "On-demand class details — YogaRox" }, { property: "og:description", content: "YogaRox on-demand class detail frontend." },
+  { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
+] }), component: OnDemandDetail });
+function OnDemandDetail() { return <AuthenticatedScreen><AppShell title="Class details" backTo="/classes"><IntegrationPlaceholder label="VIDEO PLAYER GOES HERE" detail="On-demand playback is not connected yet." icon="video" className="aspect-video min-h-0" /><p className="mt-6 text-xs font-bold uppercase text-primary">CLASS METADATA GOES HERE</p><h2 className="mt-2 font-display text-[2.35rem] font-semibold leading-none">CLASS TITLE GOES HERE</h2><p className="mt-5 text-sm leading-6 text-muted-foreground">CLASS DESCRIPTION GOES HERE</p><div className="mt-5 rounded-lg border border-border bg-card p-4 text-sm font-semibold">INSTRUCTOR GOES HERE</div><div className="mt-7"><h3 className="font-display text-2xl font-semibold">Related classes</h3><IntegrationPlaceholder label="RELATED CLASSES GO HERE" className="mt-3" /></div><div className="mt-5"><DeveloperNote>VIDEO PROVIDER TODO: Replace this placeholder with the selected on-demand video provider once the backend video reference and playback requirements are known.</DeveloperNote></div></AppShell></AuthenticatedScreen>; }
